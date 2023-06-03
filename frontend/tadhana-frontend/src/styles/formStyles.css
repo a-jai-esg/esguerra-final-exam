@@ -1,0 +1,85 @@
+@import url(//db.onlinewebfonts.com/c/d8a3c95906aec0c2483082a82e72cb40?family=WanderlustShine-Regular);
+.form {
+  background-color: #a484c7;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  border-style: none;
+  border-radius: 10px;
+  color: aliceblue;
+}
+
+.form-registration {
+  margin-top: 50px;
+  margin-bottom: auto;
+  padding: 2rem;
+}
+
+.form-login {
+  margin-top: 100px;
+  margin-bottom: auto;
+  padding: 2.5rem;
+}
+
+.card-img-login {
+  max-width: 300px;
+  margin-left: 15%;
+  margin-right: auto;
+}
+
+.card-img-registration {
+  max-width: 250px;
+  margin-left: 23%;
+  margin-right: auto;
+}
+
+.form_fields {
+  font-weight: 300;
+  color: aliceblue;
+}
+
+.textboxes {
+  width: 100%;
+  font-weight: 300;
+  color: #333;
+  text-align: justify;
+  padding-left: 10px;
+  border-radius: 5px;
+  border-width: 2px;
+  border-style: solid;
+  margin-top: 10px;
+}
+
+.textboxes-login {
+  line-height: 2;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.textboxes-registration {
+  line-height: 1;
+  font-size: 14px;
+}
+
+.btn-flat,
+.btn-flat.active {
+  font-family: "WanderlustShine-Regular", sans-serif;
+  font-weight: 300;
+  background-color: #757194;
+  color: aliceblue;
+}
+
+.btn-xxl {
+  padding: 1rem 1.5rem;
+  font-size: 1.5rem;
+  width: 100%;
+  border-style: solid;
+  border-radius: 8px;
+}
+
+.btn-xxl:hover {
+  background-color: #e5ccf4;
+  color: aliceblue;
+}
