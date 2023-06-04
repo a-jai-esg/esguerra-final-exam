@@ -1,6 +1,5 @@
-@import url(//db.onlinewebfonts.com/c/d8a3c95906aec0c2483082a82e72cb40?family=WanderlustShine-Regular);
 .form {
-  background-color: #a484c7;
+  background-color: #01978b;
   max-width: 500px;
   margin: 0 auto;
   text-align: left;
@@ -8,7 +7,8 @@
   font-family: "Poppins", sans-serif;
   border-style: none;
   border-radius: 10px;
-  color: aliceblue;
+  color: #f4faf4;
+  box-shadow: inset;
 }
 
 .form-registration {
@@ -18,7 +18,7 @@
 }
 
 .form-login {
-  margin-top: 100px;
+  margin-top: 65px;
   margin-bottom: auto;
   padding: 2.5rem;
 }
@@ -30,13 +30,14 @@
 }
 
 .card-img-registration {
+  margin-top: 0;
   max-width: 250px;
-  margin-left: 23%;
+  margin-left: 22.5%;
   margin-right: auto;
 }
 
 .form_fields {
-  font-weight: 300;
+  font-weight: 400;
   color: aliceblue;
 }
 
@@ -49,25 +50,26 @@
   border-radius: 5px;
   border-width: 2px;
   border-style: solid;
-  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
 .textboxes-login {
   line-height: 2;
   font-size: 16px;
-  margin-top: 10px;
+  margin-top: 2px;
 }
 
 .textboxes-registration {
   line-height: 1;
   font-size: 14px;
+  margin-top: 2px;
 }
 
 .btn-flat,
 .btn-flat.active {
-  font-family: "WanderlustShine-Regular", sans-serif;
-  font-weight: 300;
-  background-color: #757194;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  background-color: #3d3d3d;
   color: aliceblue;
 }
 
@@ -80,6 +82,17 @@
 }
 
 .btn-xxl:hover {
-  background-color: #e5ccf4;
-  color: aliceblue;
+  background-color: #3d3d3d;
+  font-size: 18.5pt;
+}
+
+.link{
+  text-decoration: none;
+  margin-left: 50%;
+  margin-right: auto;
+  color: #333;
+}
+
+.link:hover{
+  color: #01978b;
 }

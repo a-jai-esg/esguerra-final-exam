@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import ImageCenter from "../styles/images/Tadhana-logo-transparent.png";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -16,6 +18,9 @@ function Login() {
     },
   ];
 
+  const [email, setEmail] = useState(fields[0].placeholder);
+  const [password, setPassword] = useState(fields[0].placeholder);
+
   return (
     <>
       <div className="form form-login">
@@ -32,6 +37,13 @@ function Login() {
                   className="textboxes textboxes-login"
                   type={field.type}
                   placeholder={field.placeholder}
+                  onChange={(e) => {
+                    if (field.type === "email") {
+                      setEmail(e.target.value);
+                    } else {
+                      setPassword(e.target.value);
+                    }
+                  }}
                 />
                 <br />
               </Form.Group>
@@ -53,6 +65,10 @@ function Login() {
           </Button>
         </Form>
       </div>
+      <br />
+      <Link className="link" to="/registration">
+        Not registered? Register here.
+      </Link>
     </>
   );
 }

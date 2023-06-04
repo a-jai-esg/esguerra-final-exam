@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ImageCenter from "../styles/images/Tadhana-logo-transparent.png";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -84,6 +85,10 @@ function Registration() {
           </Button>
         </Form>
       </div>
+      <br />
+      <Link className="link" to="/login">
+        Registered already? Login here.
+      </Link>
     </>
   );
 }

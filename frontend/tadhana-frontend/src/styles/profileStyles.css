@@ -1,0 +1,55 @@
+body {
+  background: #eee;
+}
+
+
+.rounded-circle{
+    padding-bottom: 50px;
+    padding-top: 50px;
+    margin-left: 34%;
+    margin-right: auto;
+}
+
+.profile-card {
+  border: none;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.fonts {
+  font-size: 11px;
+}
+
+.social-list {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  padding: 0;
+}
+
+.social-list li {
+  padding: 10px;
+  color: #8e24aa;
+  font-size: 19px;
+}
+
+.buttons button:nth-child(1) {
+  border: 1px solid #01978b !important;
+  color: #01978b;
+  height: 40px;
+}
+
+.buttons button:nth-child(1):hover {
+  border: 1px solid #01978b !important;
+  color: #fff;
+  height: 40px;
+  background-color: #01978b;
+}
+
+.buttons button:nth-child(2) {
+  border: 1px solid #2B3A55 !important;
+  background-color: #2B3A55;
+  color: #fff;
+  height: 40px;
+}
