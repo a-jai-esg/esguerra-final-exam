@@ -29,12 +29,21 @@ function Registration() {
       placeholder: "********",
       controlId: "formBasicPassword",
     },
+    {
+      label: "My Job is",
+      type: "job_name",
+      placeholder: "UI/UX Designer",
+      controlId: "formBasicName",
+    },
+    {
+      label: "I am from",
+      type: "location",
+      placeholder: "Cebu City",
+      controlId: "formBasicName",
+    },
   ];
 
   const checkboxfields = [
-    {
-      label: "I am an employer",
-    },
     {
       label: "By signing up you agree to the terms and conditions",
     },
@@ -89,6 +98,7 @@ function Registration() {
       <Link className="link" to="/login">
         Registered already? Login here.
       </Link>
+      <br />
     </>
   );
 }

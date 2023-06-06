@@ -42,7 +42,7 @@ function Profile() {
                     <br />
                     <div className="buttons">
                       <button className="btn btn-outline-primary px-4">
-                        Edit Profile
+                        Logout
                       </button>
                       <button className="btn btn-primary px-4 ms-3">
                         Delete My Account

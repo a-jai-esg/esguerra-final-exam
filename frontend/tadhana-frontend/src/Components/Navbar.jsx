@@ -7,8 +7,8 @@ export default function Navbar() {
         Tadhana
       </Link>
       <ul>
-        <CustomLink to="/registration">Home</CustomLink>
-        <CustomLink to="/login">Logout</CustomLink>
+        <CustomLink to="/home">Home</CustomLink>
+        <CustomLink to="/profile">My Profile</CustomLink>
       </ul>
     </nav>
   );

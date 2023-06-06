@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import Login from "./Components/Login";
 import Registration from "./Components/Registration";
 import Profile from "./Components/Profile";
-
+import Home from "./Components/Home";
 // optional addition
 //import Navbar from "./Components/Navbar";
 function App() {
@@ -12,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/profile" element={<Profile/>}/>
+        <Route path="/home" element={<Home/>}/>
         <Route path="/login" element={<Login />} />
         <Route path="/registration" element={<Registration />} />
       </Routes>
