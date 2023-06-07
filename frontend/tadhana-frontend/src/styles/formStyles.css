@@ -13,7 +13,7 @@
 
 .form-registration {
   margin-top: 25px;
-  margin-bottom: auto;
+  margin-bottom: 5px;
   padding: 2rem;
 }
 
@@ -84,6 +84,12 @@
 .btn-xxl:hover {
   background-color: #3d3d3d;
   font-size: 18.5pt;
+}
+
+.form-link {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 1rem;
 }
 
 .link{

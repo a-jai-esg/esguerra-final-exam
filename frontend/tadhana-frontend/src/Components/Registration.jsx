@@ -31,7 +31,7 @@ function Registration() {
     },
     {
       label: "My Job is",
-      type: "job_name",
+      type: "jobName",
       placeholder: "UI/UX Designer",
       controlId: "formBasicName",
     },
@@ -39,6 +39,12 @@ function Registration() {
       label: "I am from",
       type: "location",
       placeholder: "Cebu City",
+      controlId: "formBasicName",
+    },
+    {
+      label: "About me",
+      type: "aboutUser",
+      placeholder: "",
       controlId: "formBasicName",
     },
   ];
@@ -94,11 +100,11 @@ function Registration() {
           </Button>
         </Form>
       </div>
-      <br />
-      <Link className="link" to="/login">
-        Registered already? Login here.
-      </Link>
-      <br />
+      <div className="form-link">
+        <Link className="link" to="/login">
+          Registered already? Login here.
+        </Link>
+      </div>
     </>
   );
 }
