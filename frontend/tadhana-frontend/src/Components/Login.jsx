@@ -30,7 +30,10 @@ function Login() {
         <Form>
           {fields.map((field) => {
             return (
-              <Form.Group className="mb-3" controlId={field.controlId}>
+              <Form.Group
+                className="mb-3 mb-3-login"
+                controlId={field.controlId}
+              >
                 <Form.Label>{field.label}</Form.Label>
                 <br />
                 <Form.Control

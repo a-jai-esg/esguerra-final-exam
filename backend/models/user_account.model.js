@@ -17,14 +17,6 @@ const userAccountDetailsSchema = new schema(
             minlength: 4
         },
 
-        gender:{
-            type: String,
-            required: false,
-            unique: false,
-            trim: true,
-            minlength: 4
-        },
-
         email:{
             type: String,
             required: true,
@@ -41,37 +33,37 @@ const userAccountDetailsSchema = new schema(
             minlength: 3
         },
 
-        address:{
+        jobDescription:{
             type: String,
-            required: false,
-            unique: false,
-            trim: true,
-            minlength: 3
-        },
-
-        isEmployer:{
-            type: Boolean,
             required: true,
             unique: false,
             trim: true,
+            minlength: 3
         },
 
-        skillset:[{
+        address:{
+            type: String,
+            required: true,
+            unique: false,
+            trim: true,
+            minlength: 3
+        },
+
+        aboutUser:{
+            type: String,
+            required: true,
+            unique: false,
+            trim: true,
+            minlength: 3
+        },
+
+        profilePicture:{
             type: String,
             required: false,
             unique: false,
             trim: true,
             minlength: 3
-        }],
-
-        employmentHistory:[{
-            type: String,
-            required: false,
-            unique: false,
-            trim: true,
-            minlength: 3
-        }]
-
+        },
     }
 );
 

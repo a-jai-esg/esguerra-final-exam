@@ -31,19 +31,25 @@ function Registration() {
     },
     {
       label: "My Job is",
-      type: "jobName",
+      type: "jobDescription",
       placeholder: "UI/UX Designer",
       controlId: "formBasicName",
     },
     {
-      label: "I am from",
-      type: "location",
+      label: "Location/Address",
+      type: "address",
       placeholder: "Cebu City",
       controlId: "formBasicName",
     },
     {
       label: "About me",
       type: "aboutUser",
+      placeholder: "",
+      controlId: "formBasicName",
+    },
+    {
+      label: "You may paste a link of your profile picture here",
+      type: "profilePicture",
       placeholder: "",
       controlId: "formBasicName",
     },

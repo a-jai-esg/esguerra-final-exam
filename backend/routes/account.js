@@ -19,13 +19,12 @@ router.route('/sign_up').post((req, res) => {
 	const name = req.body.name;
 	const email = req.body.email;
 	const password = req.body.password;
-    const address = req.body.address;
-	const isEmployer = req.body.isEmployer;
-    const skillset = req.body.skillset;
-    const employmentHistory = req.body.employmentHistory;
-    const gender = req.body.gender;
+	const jobDescription = req.body.jobDescription;
+	const address = req.body.address;
+    const aboutUser = req.body.aboutUser;
+	const profilePicture = req.body.profilePicture;
 
-	const newUserAccount = new UserAccount({name, email, gender, address, isEmployer, skillset, password, employmentHistory});
+	const newUserAccount = new UserAccount({name, email, password, jobDescription, address, aboutUser, profilePicture});
 
 	// register user
 	newUserAccount.save()
@@ -38,4 +37,4 @@ router.route('/sign_up').post((req, res) => {
 // end of sign-up endpoints
 
 module.exports = router;
-// employer news feed
+// employer news feed	

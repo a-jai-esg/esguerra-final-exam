@@ -1,12 +1,12 @@
 import React from "react";
 import Navbar from "./Navbar";
 
-function Profile() {
+function Home() {
   const defaultProfile = [
     {
       name: "Jennie Kim",
       email: "jennie@tadhana.com",
-
+      address: "Seoul, South Korea",
       profilePicture:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Jennie_Kim_Marie_Claire_Korea_2020.png/220px-Jennie_Kim_Marie_Claire_Korea_2020.png",
 
@@ -23,13 +23,10 @@ function Profile() {
           <>
             <div className="card w-75">
               <div className="card-body">
-                <h5 className="card-title">{profile.description}</h5>
-                <p className="card-text">
-                  With supporting text below as a natural lead-in to additional
-                  content.
-                </p>
+                <h5 className="card-title">{profile.name}</h5>
+                <p className="card-text">{profile.about}</p>
                 <a href="#" className="btn btn-primary">
-                  Button
+                  View
                 </a>
               </div>
             </div>
@@ -40,4 +37,4 @@ function Profile() {
   );
 }
 
-export default Profile;
+export default Home;
