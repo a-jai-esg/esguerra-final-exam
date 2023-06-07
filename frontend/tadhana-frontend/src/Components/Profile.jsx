@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "./Navbar";
 
 function Profile() {
+  useEffect(() => {
+    document.title = "My Profile";
+  }, []);
   const defaultProfile = [
     {
       name: "Jennie Kim",
       email: "jennie@tadhana.com",
-
       profilePicture:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Jennie_Kim_Marie_Claire_Korea_2020.png/220px-Jennie_Kim_Marie_Claire_Korea_2020.png",
-
       about:
         "Hello, My name is Jennie Kim, I am an actress, singer, and designer from South Korea.",
     },

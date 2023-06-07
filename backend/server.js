@@ -20,7 +20,7 @@ mongoose.connect(connectionString, {
 	.catch((error) => console.error("Connection to database has failed... Error: " + error))
 
 // use default endpoints
-app.use('/', accountRouter);
+app.use('/app', accountRouter);
 
 app.listen(PORT, () => {
 	console.log(`Server is running at PORT: ${PORT}`);

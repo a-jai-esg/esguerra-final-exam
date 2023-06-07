@@ -18,7 +18,7 @@
 }
 
 .form-login {
-  margin-top: 125px;
+  margin-top: 105px;
   margin-bottom: auto;
   padding: 2.5rem;
 }
@@ -41,6 +41,20 @@
 }
 
 .form_fields {
+  font-weight: 400;
+  color: aliceblue;
+}
+
+.status_fields {
+  margin-top: 15px;
+  margin-left: 40%;
+  font-weight: 400;
+  color: aliceblue;
+}
+
+.status_fields-registration {
+  margin-top: 15px;
+  margin-left: 50%;
   font-weight: 400;
   color: aliceblue;
 }

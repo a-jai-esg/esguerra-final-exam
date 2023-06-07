@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import axios from "axios";
 import ImageCenter from "../styles/images/Tadhana-logo-transparent.png";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -8,13 +10,13 @@ function Registration() {
     {
       label: "Enter your Name",
       type: "name",
-      placeholder: "Juan Dela Cruz",
+      placeholder: "e.g. Juan Dela Cruz",
       controlId: "formBasicEmail",
     },
     {
       label: "Email",
       type: "email",
-      placeholder: "juan@tadhana.com",
+      placeholder: "e.g juan@tadhana.com",
       controlId: "formBasicPassword",
     },
     {
@@ -32,13 +34,13 @@ function Registration() {
     {
       label: "My Job is",
       type: "jobDescription",
-      placeholder: "UI/UX Designer",
+      placeholder: "e.g. UI/UX Designer",
       controlId: "formBasicName",
     },
     {
       label: "Location/Address",
       type: "address",
-      placeholder: "Cebu City",
+      placeholder: "e.g. Cebu City",
       controlId: "formBasicName",
     },
     {
@@ -55,16 +57,60 @@ function Registration() {
     },
   ];
 
+  // useStates
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPass, setConfirmPass] = useState("");
+  const [jobDescription, setJobDescription] = useState("");
+  const [address, setAddress] = useState("");
+  const [aboutUser, setAboutUser] = useState("");
+  const [profilePicture, setProfilePicture] = useState("");
+
+  const [status, setStatus] = useState("");
+
   const checkboxfields = [
     {
       label: "By signing up you agree to the terms and conditions",
     },
   ];
 
+  const handleRegistration = async () => {
+    setStatus("");
+    // Show alert when the registration is successful
+    if ((name === " " && email === " ") || password != confirmPass) {
+      return;
+    } else {
+      try {
+        const response = await axios.post(
+          "http://192.168.1.5:4000/app/register",
+          {
+            params: {
+              name: name,
+              email: email,
+              password: password,
+              jobDescription: jobDescription,
+              address: address,
+              aboutUser: aboutUser,
+              profilePicture: profilePicture,
+            },
+          }
+        );
+
+        if (response.status == 200) {
+          setStatus(`Welcome aboard, ${name}!`);
+        }
+      } catch (error) {
+        alert(error);
+        setStatus("Please check fields.");
+      }
+    }
+  };
+
   return (
     <>
       <div className="form form-registration">
-        <div className>
+        <div>
           <img className="card-img-registration" src={ImageCenter}></img>
         </div>
         <Form>
@@ -78,6 +124,35 @@ function Registration() {
                     className="textboxes textboxes-registration"
                     type={field.type}
                     placeholder={field.placeholder}
+                    onChange={(e) => {
+                      switch (field.type) {
+                        case "name":
+                          setName(e.target.value);
+                          break;
+                        case "email":
+                          setEmail(e.target.value);
+                          break;
+                        case "password":
+                          if (field.label === "Password") {
+                            setPassword(e.target.value);
+                          } else {
+                            setConfirmPass(e.target.value);
+                          }
+                          break;
+                        case "jobDescription":
+                          setJobDescription(e.target.value);
+                          break;
+                        case "address":
+                          setAddress(e.target.value);
+                          break;
+                        case "aboutUser":
+                          setAboutUser(e.target.value);
+                          break;
+                        case "profilePicture":
+                          setProfilePicture(e.target.value);
+                          break;
+                      }
+                    }}
                   />
                 </Form.Group>
               </>
@@ -101,10 +176,11 @@ function Registration() {
             );
           })}
           <br />
-          <Button variant="flat" size="xxl" type="submit">
+          <Button variant="flat" size="xxl" onClick={handleRegistration}>
             Register!
           </Button>
         </Form>
+        <p className="status_fields">{status}</p>
       </div>
       <div className="form-link">
         <Link className="link" to="/login">

@@ -1,28 +1,44 @@
 const router = require('express').Router(); // use express router for this one
 let UserAccount = require('../models/user_account.model'); // assign temporary variables
 
-// login na tarong endpoint
+// login endpoint
 router.route("/login").get((req, res) => {
-	console.log(req);
-	UserAccount.findOne({email: `${req.body.email}`})
-	.then(users => res.status(200).json(users))
-	.catch(error => res.status(400).json('User not found! ' + error));
+	// tweaked to fit
+	UserAccount.findOne({ email: `${req.query.email}` })
+	  .then((users) => {
+		if (users.password === req.query.password) {
+			res.status(200).json(users); // send right response	
+		} else {
+			res.status(300).json("Incorrect password");
+		}
+	  })
+	  .catch((error) => res.status(400).json("Error! " + error));
 });
 
-// signup enpoints
-//Added another end point for sign up, full update
+// end of login endpoint
 
-router.route('/sign_up').post((req, res) => {
-	console.log(req.body);
-	
-	// igka send ug post request makuha ni	 sila dapat
-	const name = req.body.name;
-	const email = req.body.email;
-	const password = req.body.password;
-	const jobDescription = req.body.jobDescription;
-	const address = req.body.address;
-    const aboutUser = req.body.aboutUser;
-	const profilePicture = req.body.profilePicture;
+// login endpoint
+router.route("/getprofiles").get((req, res) => {
+	UserAccount.find()
+	.then(users => res.status(200).json(users))
+	.catch(error => res.status(400).json(error));
+});
+// end of login endpoint
+
+
+// register enpoint
+
+router.route('/register').post((req, res) => {
+	// required fields
+	console.log(req.body.params);
+
+	const name = req.body.params.name;
+	const email = req.body.params.email;
+	const password = req.body.params.password;
+	const jobDescription = req.body.params.jobDescription;
+	const address = req.body.params.address;
+    const aboutUser = req.body.params.aboutUser;
+	const profilePicture = req.body.params.profilePicture;
 
 	const newUserAccount = new UserAccount({name, email, password, jobDescription, address, aboutUser, profilePicture});
 

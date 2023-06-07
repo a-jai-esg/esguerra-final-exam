@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import ImageCenter from "../styles/images/Tadhana-logo-transparent.png";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -18,13 +19,37 @@ function Login() {
     },
   ];
 
+  useEffect(() => {
+    document.title = "Tadhana: Job Listing for Single Parents and Alike";
+  });
+
   const [email, setEmail] = useState(fields[0].placeholder);
   const [password, setPassword] = useState(fields[0].placeholder);
+  const [status, setStatus] = useState("");
+
+  const handleLogin = async () => {
+    // Show alert when the registration is successful
+    try {
+      const response = await axios.get("http://192.168.1.5:4000/app/login", {
+        params: {
+          email: email,
+          password: password,
+        },
+      });
+      console.log(response);
+
+      if (response.status == 200) {
+        setStatus(`Welcome back, ${response.data.name}`);
+      }
+    } catch (error) {
+      setStatus("Incomplete fields is given.");
+    }
+  };
 
   return (
     <>
       <div className="form form-login">
-        <div className>
+        <div>
           <img className="card-img-login" src={ImageCenter}></img>
         </div>
         <Form>
@@ -63,10 +88,11 @@ function Login() {
             />
           </Form.Group>
           <br />
-          <Button variant="flat" size="xxl" type="submit">
+          <Button variant="flat" size="xxl" onClick={handleLogin}>
             Sign In!
           </Button>
         </Form>
+        <p className="status_fields">{status}</p>
       </div>
       <br />
       <Link className="link" to="/registration">

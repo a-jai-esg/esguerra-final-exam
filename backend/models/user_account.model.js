@@ -45,8 +45,7 @@ const userAccountDetailsSchema = new schema(
             type: String,
             required: true,
             unique: false,
-            trim: true,
-            minlength: 3
+            minlength: 4
         },
 
         aboutUser:{

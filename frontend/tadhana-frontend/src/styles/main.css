@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-
+* {
+  box-sizing: border-box;
+}
 body {
   background: #F4FAF2;
   background-attachment: fixed;
   overflow: auto;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
+  align-items: baseline;
 }
 
 .card-title {
