@@ -16,7 +16,7 @@ function Home() {
   const [profiles, setProfiles] = useState([]);
 
   useEffect(() => {
-    document.title = "Job Listings Available";
+    document.title = "Listings Available";
     fetch("http://192.168.1.5:4000/app/getprofiles")
       .then((response) => response.json())
       .then((json) => {
@@ -28,7 +28,7 @@ function Home() {
     <>
       <Navbar />
       <div>
-        <h5 className="site-title mt-2 mb-0">Job Listings</h5>
+        <h5 className="site-title mt-2 mb-0">Job and Employee Listings</h5>
       </div>
 
       {profiles.map((profile) => {

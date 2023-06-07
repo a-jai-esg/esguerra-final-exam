@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ImageCenter from "../styles/images/Tadhana-logo-transparent.png";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-function Login() {
+function Login({ setResponse }) {
   const fields = [
     {
       label: "Email Address",
@@ -26,9 +26,11 @@ function Login() {
   const [email, setEmail] = useState(fields[0].placeholder);
   const [password, setPassword] = useState(fields[0].placeholder);
   const [status, setStatus] = useState("");
+  const navigate = useNavigate();
 
   const handleLogin = async () => {
     // Show alert when the registration is successful
+
     try {
       const response = await axios.get("http://192.168.1.5:4000/app/login", {
         params: {
@@ -36,13 +38,16 @@ function Login() {
           password: password,
         },
       });
+
       console.log(response);
 
       if (response.status == 200) {
         setStatus(`Welcome back, ${response.data.name}`);
+        setResponse(response);
+        navigate("/profile");
       }
     } catch (error) {
-      setStatus("Incomplete fields is given.");
+      setStatus("Please review entries.");
     }
   };
 
