@@ -13,7 +13,7 @@ function App() {
     <>
     <div className="container">
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Home/>} />
         <Route path="/profile" element={<Profile response={response}/>}/>
         <Route path="/home" element={<Home/>}/>
         <Route path="/login" element={<Login setResponse={setResponse}/>} />
