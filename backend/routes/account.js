@@ -25,9 +25,7 @@ router.route("/getprofiles").get((req, res) => {
 });
 // end of login endpoint
 
-
 // register enpoint
-
 router.route('/register').post((req, res) => {
 	// required fields
 	console.log(req.body.params);
